@@ -25,7 +25,7 @@ public class BarNavMenuChangesWithLocaleTest extends TestBase {
 
 
     @MethodSource("dataProvider")
-    @ParameterizedTest(name = "The navigation bar menu shows buttons {1} for the locale {0}.")
+    @ParameterizedTest(name = "{1} - {0}")
     @DisplayName("The nav bar menu shows btns for the locale.")
     void barNavigationMenuChangesWithLocaleChangeTest(Locale locale, List<String> expectedButtons) {
 
