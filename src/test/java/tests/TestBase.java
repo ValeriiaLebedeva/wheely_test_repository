@@ -22,8 +22,9 @@ public class TestBase {
     static void beforeAll() {
         Configuration.baseUrl = "https://wheely.com/en";
         String value = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
-        Configuration.browser = "chrome";
-        Configuration.browserVersion = "100.0";
+        String browserName = System.getProperty("browser", "chrome");
+        Configuration.browser = browserName;
+    //    Configuration.browserVersion = "100.0";
         Configuration.browserSize = "1920x1080";
         String urlRemote = format("https://user1:1234@%s", value);
         Configuration.remote = urlRemote;
