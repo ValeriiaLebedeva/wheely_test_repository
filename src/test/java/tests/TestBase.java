@@ -26,8 +26,6 @@ public class TestBase {
     //    Configuration.browserSize = "1920x1080";
         String urlRemote = format("https://user1:1234@%s", value);
         Configuration.remote = urlRemote;
-
-        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
 
