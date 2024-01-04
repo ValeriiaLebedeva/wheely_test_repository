@@ -34,8 +34,8 @@ dependencies {
 }
 
 test {
-    systemProperty("browser", System.getProperty("browser", ""))
-    systemProperty("urlRemote", System.getProperty("urlRemote", ""))
+//    systemProperty("browser", System.getProperty("browser", ""))
+//    systemProperty("urlRemote", System.getProperty("urlRemote", ""))
     systemProperties(System.getProperties())
     useJUnitPlatform()
 }

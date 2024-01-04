@@ -22,12 +22,14 @@ public class TestBase {
     static void beforeAll() {
         Configuration.baseUrl = "https://wheely.com/en";
         String value = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
-        String browserName = System.getProperty("browser", "chrome");
-        Configuration.browser = browserName;
     //    Configuration.browserVersion = "100.0";
-        Configuration.browserSize = "1920x1080";
+    //    Configuration.browserSize = "1920x1080";
         String urlRemote = format("https://user1:1234@%s", value);
         Configuration.remote = urlRemote;
+
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
