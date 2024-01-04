@@ -12,6 +12,8 @@ import pages.CitiesAndClassesPage;
 
 import java.util.Map;
 
+import static java.lang.String.format;
+
 public class TestBase {
 
     CitiesAndClassesPage citiesAndClassesPage = new CitiesAndClassesPage();
@@ -19,10 +21,12 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://wheely.com/en";
+        String value = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
         Configuration.browser = "chrome";
         Configuration.browserVersion = "100.0";
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        String urlRemote = format("https://user1:1234@%s", value);
+        Configuration.remote = urlRemote;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
