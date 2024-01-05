@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class CitiesAndClassesPage {
 
-    String content = FileUtil.readFileContent("/Users/leradipress/IdeaProjects/wheely_test_repository/src/test/resources/CitiesAndClassesLeadText.txt");
+    String content = FileUtil.readFileContent("src/test/resources/CitiesAndClassesLeadText.txt");
 
     String URL_PART = "/cities-and-classes";
 
