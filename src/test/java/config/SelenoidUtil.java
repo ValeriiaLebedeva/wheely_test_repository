@@ -20,4 +20,8 @@ public class SelenoidUtil {
         Configuration.remote = urlRemote;
 
     }
+
+    public String getVideoStorageUrl() {
+        return selenoidConfig.videoStorage();
+    }
 }

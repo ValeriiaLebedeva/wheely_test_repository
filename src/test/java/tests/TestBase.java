@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.EnvUtil;
+import config.SelenoidConfig;
 import config.SelenoidUtil;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -31,6 +32,6 @@ public class TestBase {
         Attach.screenshotAs("Page screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo();
+        Attach.addVideo(SelenoidUtil.selenoidConfig.videoStorage());
     }
 }
