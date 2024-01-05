@@ -2,7 +2,8 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.CredentialsConfig;
+import config.EnvConfig;
+import config.SelenoidConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
@@ -20,17 +21,20 @@ public class TestBase {
 
     CitiesAndClassesPage citiesAndClassesPage = new CitiesAndClassesPage();
 
-    public static CredentialsConfig credentials =
-            ConfigFactory.create(CredentialsConfig.class);
+    public static SelenoidConfig selenoidConfig =
+            ConfigFactory.create(SelenoidConfig.class);
+
+    public static EnvConfig envConfig = ConfigFactory.create(EnvConfig.class);
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://wheely.com/en";
 
-        String value = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
-        String login = credentials.login();
-        String password = credentials.password();
-        String urlRemote = format("https://%s:%s@%s", login, password, value);
+        Configuration.baseUrl = envConfig.webUrl();
+
+        String url = selenoidConfig.url();
+        String login = selenoidConfig.login();
+        String password = selenoidConfig.password();
+        String urlRemote = format("https://%s:%s@%s", login, password, url);
 
         Configuration.remote = urlRemote;
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
