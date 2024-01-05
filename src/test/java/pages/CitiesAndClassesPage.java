@@ -4,12 +4,15 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import helpers.FileUtil;
 
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class CitiesAndClassesPage {
+
+    String content = FileUtil.readFileContent("/Users/leradipress/IdeaProjects/wheely_test_repository/src/test/resources/CitiesAndClassesLeadText.txt");
 
     String URL_PART = "/cities-and-classes";
 
@@ -56,4 +59,12 @@ public class CitiesAndClassesPage {
         citiesList.shouldHave(CollectionCondition.texts(expectedCitiesEn));
         return this;
     }
+
+
+    public CitiesAndClassesPage verifyLeadTextFromFile() {
+        leadText.shouldBe(Condition.visible);
+        leadText.shouldHave(Condition.text(content));
+        return this;
+    }
+
 }
