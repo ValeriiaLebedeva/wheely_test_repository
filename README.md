@@ -98,6 +98,7 @@ https://jenkins.autotests.cloud/job/ValeriyaLebedeva_wheely_autotests/35/allure/
 
 # Allure TestOps integration
 
+
 <p align="center">
   <img src="media/alluretestops1.png">
 </p>
@@ -106,9 +107,13 @@ https://jenkins.autotests.cloud/job/ValeriyaLebedeva_wheely_autotests/35/allure/
   <img src="media/alluretestops2.png">
 </p>
 
+<p align="center">
+  <img src="media/alluretestops3.png">
+</p>
+
 # Jira integration
 <p align="center">
-  <img src="media/jiraintegration.png">
+  <img src="media/jira.png">
 </p>
 
 
