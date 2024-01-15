@@ -28,11 +28,11 @@ public class CitiesAndClassesPage {
             "Saint Petersburg");
 
 
-    SelenideElement title = $("[class*=Text_title]");
+    private SelenideElement title = $("[class*=Text_title]");
 
-    SelenideElement leadText = $("[data-block-type=text]");
+    private SelenideElement leadText = $("[data-block-type=text]");
 
-    ElementsCollection citiesList = $$("[class*=CitiesAndClasses_column] a").
+    private ElementsCollection citiesList = $$("[class*=CitiesAndClasses_column] a").
             filterBy(Condition.attribute("data-test","city-link"));
 
 
